@@ -12,7 +12,7 @@ public class ConnectableObservable {
         source.subscribe(System.out::println);
 
         Thread.sleep(10000);
-        
+
         source.subscribe(System.out::println);
 
         Thread.sleep(10000);
