@@ -16,9 +16,9 @@ public class DisposeObservable {
 
         disposable.add(d);
         disposable.dispose();
-
-
     }
+
+
 
 }
 
