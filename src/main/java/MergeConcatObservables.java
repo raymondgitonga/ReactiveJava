@@ -9,7 +9,7 @@ public class MergeConcatObservables {
         Observable<String> src1 = Observable.interval(1, TimeUnit.SECONDS).map(e -> "src1 : "+  e);
         Observable<String> src2 = Observable.interval(1, TimeUnit.SECONDS).map(e -> "src2 : "+  e);
 
-        Observable.merge(src1, src2)
+        src1.mergeWith(src2)
                 .subscribe(System.out::println);
 
         Thread.sleep(10000);
