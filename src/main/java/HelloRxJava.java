@@ -9,6 +9,8 @@ public class HelloRxJava {
                 }
         );
 
-        source.subscribe(System.out::println);
+        source.subscribe(e -> System.out.println("Observer 1: " + e));
+
+        source.subscribe(e -> System.out.println("Observer 2: " + e));
     }
 }

@@ -1,5 +1,6 @@
 import io.reactivex.rxjava3.core.Observable;
 
+
 public class Grouping {
     public static void main(String[] args) {
         Observable<Employee> obs = Observable.just(
@@ -16,7 +17,7 @@ public class Grouping {
         );
 
         obs.groupBy(e -> e.getRating())
-                .flatMapSingle(e -> e.toMultimap(key -> e.getKey(), emp -> emp.getName()))
+                .flatMapSingle(e -> e.toList())
                 .subscribe(System.out::println);
     }
 }
