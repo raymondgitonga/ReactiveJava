@@ -1,14 +1,16 @@
 import io.reactivex.rxjava3.core.Observable;
 
-import java.util.Arrays;
-import java.util.stream.Stream;
+public class ConcurrencyRxJava {
 
-public class HelloRxJava {
     public static void main(String[] args) {
         Observable<String> source = Observable.create(
                 e -> {
-                    e.onNext("Hello");
-                    e.onNext("RxJava");
+                    new Thread(
+                            () -> {
+                                e.onNext("Hello");
+                                e.onNext("RxJava");
+                            }
+                    ).start();
                 }
         );
 
